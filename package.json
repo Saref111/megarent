@@ -2,7 +2,7 @@
   "name": "megarent",
   "version": "1.0.0",
   "description": "",
-  "main": "gulp.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
@@ -30,10 +30,6 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "readable-stream": "^3.4.0",
-    "stylelint": "13.7.2",
-    "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-standard": "20.0.0",
-    "stylelint-scss": "3.18.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0"
   }
