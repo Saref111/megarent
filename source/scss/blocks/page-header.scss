@@ -1,0 +1,13 @@
+.page-header {
+    width: 100%;
+    background-color: #E2E2E2;
+
+    &__wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        min-height: 110px;
+    }
+}

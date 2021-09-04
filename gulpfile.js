@@ -144,7 +144,7 @@ gulp.task("clean", function () {
 });
 
 gulp.task("sprite", function () {
-  return gulp.src("source/img/svg/*.svg")
+  return gulp.src("source/img/icons/*.svg")
     .pipe(imagemin([imagemin.svgo()]))
     .pipe(svgstore({
       inlineSvg: true

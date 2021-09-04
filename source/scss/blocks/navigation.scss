@@ -1,0 +1,8 @@
+.navigation {
+    margin-left: auto;
+
+    &__list {
+        @include list-reset;
+        display: flex;
+    }
+}
