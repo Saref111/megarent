@@ -1,4 +1,42 @@
 .contacts {
     @include list-reset;
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 270px;
+    padding-bottom: 15px;
+    padding-top: 7px;
+
+    &__link {
+        font-family: Montserrat, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        color: #484B4C;
+    }
+
+    &__item {
+        display: flex;
+        margin-right: 10px;
+
+        &:first-child {
+            margin-right: 15px;
+        }
+
+        &:last-child {
+            width: 100%;
+            margin-top: 6px;
+
+            &>a {
+                font-family: HelveticaNeueCyr, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 15px;
+                color: #484B4C;
+            }
+        }
+    }
 }
