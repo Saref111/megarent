@@ -4,5 +4,20 @@
     &__list {
         @include list-reset;
         display: flex;
+        margin-right: 5px;
+        padding-bottom: 15px;
+    }
+
+    &__item {
+        font-family: HelveticaNeueCyr, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 15px;
+        color: #484B4C;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
     }
 }
