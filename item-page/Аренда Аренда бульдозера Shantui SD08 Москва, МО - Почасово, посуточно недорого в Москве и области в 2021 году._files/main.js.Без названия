@@ -1,0 +1,692 @@
+$(document).ready(function() {
+    const cards = document.querySelectorAll('.main__card'),
+        hoverMenu = document.querySelectorAll('.hover-menu'),
+        partners = document.querySelectorAll('.main__clients-card'),
+        form = document.querySelector('.main-form'),
+        question = document.querySelectorAll('.main__quetion-item'),
+        category = document.querySelectorAll('.main-category__card'),
+        categoryCard = document.querySelectorAll('.main-category__card-preview'),
+        sidebar = document.querySelector('.sidebar'),
+        menuCall = document.querySelector('.top-navigation'),
+        menuBtn = document.querySelector('.menu-btn'),
+        overlay = document.querySelector('.overlay'),
+        contacts = document.querySelector('.top-contacts'),
+        wrapper = document.querySelector('.wrapper'),
+        pluses = document.querySelectorAll('.main__plus-item'),
+        more = document.querySelector('.more'),
+        main = document.querySelector('.main'),
+        container = main.querySelector('.container'),
+        sidebarMenuMain = document.querySelector('.sidebar-menu'),
+        moreCatalog = document.querySelectorAll('.more-card-item'),
+        contactsText = document.querySelector('.cards-description'),
+        phoneLink = contacts.querySelectorAll('.icon-link')[2],
+        sidebarMenu = sidebarMenuMain.querySelectorAll('.sidebar-menu__item');
+    let topMenu = document.querySelector('.top-nav-menu');
+    // pluses.forEach((elem, index) => {
+    //     let w = elem.offsetWidth + 50;
+    //     elem.style.height = w + 'px';
+    // })
+    $('.slick-slider1').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+    });
+    $('.slick-slider2').slick({
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+    $('.fancy-click').fancybox();
+    let sidebarHeight = container.offsetHeight;
+    sidebar.style.height = sidebarHeight + 'px';
+    cards.forEach((elem, index) => {
+        let bg = elem.getAttribute('data-img');
+        elem.style.backgroundImage = 'url(' + bg + ')';
+    })
+    partners.forEach((elem, index) => {
+        let bg = elem.getAttribute('data-img');
+        elem.style.backgroundImage = 'url(' + bg + ')';
+    })
+    // categoryCard.forEach((elem, index) => {
+    //     let bg = elem.getAttribute('data-img');
+    //     elem.style.backgroundImage = 'url(' + bg + ')';
+    // })
+    category.forEach((elem, index) => {
+        let link = elem.getAttribute('data-link');
+        elem.addEventListener('click', () => {
+            window.location = link;
+        })
+    })
+
+    let firstScroll;
+    let first = 0;
+
+
+    var mainFormNumb = new BX.MaskedInput({
+        mask: "+7 999 999 99 99",
+        input: BX('phoner'),
+        placeholder: '_'
+    });
+
+    $('input[name="user_name"]').on('keypress', function() {
+        var that = this;
+        setTimeout(function() {
+            var res = /[^а-яА-ЯїЇєЄіІёЁA-Za-z ]/g.exec(that.value);
+            that.value = that.value.replace(res, '');
+        }, 0);
+    });
+
+    document.addEventListener('mouseover', (event) => {
+        let target = event.target;
+
+        if (target.matches('.sidebar-menu__item, .hover-menu__item, .hover-menu, a.thin-font')) {
+            first = sidebarMenu[0].getBoundingClientRect().y;
+            sidebarMenu.forEach((elem, index) => {
+                if (target === sidebarMenu[index]) {
+                    hoverMenu.forEach((el, i) => {
+                        if (el !== target) {
+                            hoverMenu[index].classList.remove('active-fix');
+                            hoverMenu[i].classList.remove('active');
+                        }
+                    });
+                    if (window.scrollY >= 740 && window.scrollY <= (sidebarHeight - 100)) {
+                        for (i = 0; i <= (hoverMenu.length - 1); i++) {
+                            hoverMenu[i].classList.remove('active-fix');
+                        }
+                        let top = elem.getBoundingClientRect().y - firstScroll;
+                        if (top <= 0) {
+                            top = 0;
+                        }
+                        hoverMenu[index].style.top = top + 'px';
+                        hoverMenu[index].classList.add('active-fix');
+
+                    } else {
+                        hoverMenu[index].classList.remove('active');
+                        let topNoScroll = elem.getBoundingClientRect().y - first;
+                        if (topNoScroll <= 0) {
+                            topNoScroll = 0;
+                        }
+                        hoverMenu[index].style.top = topNoScroll + 'px';
+                        hoverMenu[index].classList.add('active');
+                        for (i = 0; i <= (hoverMenu.length - 1); i++) {
+                            hoverMenu[i].classList.remove('active-fix');
+                        }
+                    }
+
+                }
+            });
+
+        } else if (!target.matches('.sidebar-menu__item, .hover-menu__item, .hover-menu')) {
+            hoverMenu.forEach((el, i) => {
+                if (target !== el) {
+                    hoverMenu[i].classList.remove('active');
+                    if (window.scrollY >= 740 && window.scrollY <= (sidebarHeight - 100)) {
+                        for (i = 0; i <= (hoverMenu.length - 1); i++) {
+                            hoverMenu[i].classList.remove('active-fix');
+                        }
+
+                    }
+                }
+            });
+
+        } else {
+            return;
+        }
+    })
+
+    let questionClick = false;
+    question.forEach((elem, index) => {
+        elem.addEventListener('click', () => {
+            if (questionClick) {
+                questionClick = false;
+                elem.classList.remove('active');
+            } else {
+                questionClick = true;
+                elem.classList.add('active');
+            }
+        })
+    })
+
+    menuCall.addEventListener('click', () => {
+        let target = event.target;
+        let closingButton = document.querySelector('.mobile-button-closer');
+        if (window.outerWidth <= 640) {
+            topMenu = document.querySelector('.mobile-menu');
+            menuCall.appendChild(overlay);
+        }
+        if (target.matches('.hamburger-btn') || target.matches('.menu-btn')) {
+            menuBtn.classList.add('active');
+            topMenu.classList.add('active');
+            overlay.classList.add('active');
+            closingButton.style.display = "block";
+        }
+        if (target.matches('.overlay')) {
+            menuBtn.classList.remove('active');
+            topMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        if (target.matches('.mobile-button-closer')) {
+            menuBtn.classList.remove('active');
+            topMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            closingButton.style.display = "none";
+        }
+
+
+    })
+    if (window.outerWidth <= 640) {
+        topMenu.appendChild(contacts);
+        let container = menuCall.querySelector('.container');
+        let topLink = phoneLink.cloneNode(true);
+        topMenu.appendChild(topLink);
+        container.appendChild(phoneLink);
+        topLink.classList.add('top-link');
+    }
+
+
+    if (typeof (BX.CallRequest) === 'undefined') {
+        BX.CallRequest = function (id, form) {
+            this._id = id;
+            this._formid = form;
+            this.event = 'click';
+            this._element = BX(this._id);
+            //this._form = BX(this._formid);
+            this._submitHandler = BX.delegate(this._updatePerconalDataHandler, this);
+            BX.bind(this._element, this.event, this._submitHandler);
+
+        };
+
+        BX.CallRequest.prototype = {
+            _updatePerconalDataHandler: function (e) {
+                e.preventDefault();
+                var popup = BX.PopupWindowManager.create("popup-message1", null, {
+                    content: "<form id='call_id' action=\"<?=POST_FORM_ACTION_URI?>\" method=\"POST\">" +
+                        "<div  ><input style='margin-top:15x;width: 100%;padding: 15px 15px;" +
+                        "font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;margin-right: 30px;' type=\"text\" name=\"user_name\" placeholder='Имя'>" +
+                        "<br>" +
+                        "<input id='number' style='margin-top:20px;width: 100%;font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;" +
+                        "margin-right: 30px;padding: 15px 15px;'" +
+                        " type=\"text\" name=\"user_phone\" placeholder='Номер телефона'>" +
+                        "</div></form>",
+                    autoHide: true,
+                    offsetLeft: 0,
+                    offsetTop: 0,
+                    height: 325,
+                    width: 400,
+                    darkMode: true,
+                    lightShadow: true,
+                    overlay: true,
+                    closeByEsc: true,
+                    titleBar: true,
+                    closeIcon: true,
+                    draggable: true,
+                    contentColor: "red",
+                    events: {
+                        onPopupClose: function() {
+                            // Событие при закрытии окна
+                            console.log('a');
+                        }
+                    },
+                    buttons: [
+                        new BX.PopupWindowButton({
+                            text: "Отправить",
+                            className: "webform-button-link-cancel",
+                            id: "send",
+                            events: {
+                                click: function () {
+                                    this._formid = "call_id"
+                                    this._form = BX(this._formid);
+
+                                    let name = this._form.querySelector('input[name=user_name]').value;
+                                    let phone = this._form.querySelector('input[name=user_phone]').value;
+                                    BX.ajax({
+                                        url: '/local/ajax/call_ajax.php',
+                                        method: 'POST',
+                                        dataType: "json",
+                                        data: {user_name: name, user_phone: phone, submit: "submit", id: 12},
+                                        onsuccess: function (result) {
+                                            let popupTitle, popupContent = '',
+                                                contentColor;
+                                            //alert(result.ERROR_MESSAGE+" "+result.length );
+                                            if (result.ERROR_MESSAGE.length > 0) {
+                                                popupTitle = 'Ошибка';
+                                                result.ERROR_MESSAGE.forEach(function (item) {
+                                                    popupContent += '<div style="text-align: center; color: red;">' + item + '</div>';
+                                                });
+                                                contentColor = 'red';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            } else {
+                                                popupTitle = 'Заказ принят';
+                                                popupContent += '<div style="text-align: center; color: red;">Мы свяжемся в Вами в близжайшее время.</div>';
+                                                contentColor = 'white';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            }
+
+                                            popup.setContent(popupContent);
+                                            popup.setTitleBar(popupTitle);
+                                            popup.show();
+                                            var win = document.getElementById("send");
+                                            win.remove();
+
+                                        },
+                                        onfailure: function (e) {
+                                            console.log(e);
+                                        }
+                                    });
+                                }
+                            }
+                        }),
+                        new BX.PopupWindowButton({
+                            text: "Закрыть",
+                            className: "webform-button-link-cancel",
+                            events: {
+                                click: function () {
+                                    this.popupWindow.destroy();
+                                }
+                            }
+                        })
+                    ]
+                });
+                popup.setTitleBar("Заказать звонок");
+                popup.show();
+                var result_call = new BX.MaskedInput({
+                    mask: "+7 999 999 99 99",
+                    input: BX('number'),
+                    placeholder: '_'
+                });
+                        $('input[name="user_name"]').on('keypress', function() {
+                            var that = this;
+                            setTimeout(function() {
+                                var res = /[^а-яА-ЯїЇєЄіІёЁA-Za-z ]/g.exec(that.value);
+                                that.value = that.value.replace(res, '');
+                            }, 0);
+                        });
+            }
+        };
+        BX.CallRequest.create = function (id, form) {
+            _self = new BX.CallRequest(id, form);
+            return _self;
+        };
+
+    }
+
+
+    BX.CallRequest.create('call');
+    BX.CallRequest.create('call1');
+
+
+    if (typeof (BX.ConsultRequest) === 'undefined') {
+        BX.ConsultRequest = function (id, form) {
+            this._id = id;
+            this._formid = form;
+            this.event = 'click';
+            this._element = BX(this._id);
+            //this._form = BX(this._formid);
+            this._submitHandler = BX.delegate(this._updatePerconalDataHandler, this);
+            BX.bind(this._element, this.event, this._submitHandler);
+
+        };
+
+        BX.ConsultRequest.prototype = {
+            _updatePerconalDataHandler: function (e) {
+                e.preventDefault();
+
+                var popup = BX.PopupWindowManager.create("popup-message2", null, {
+                    content: "<form id='call_id' action=\"<?=POST_FORM_ACTION_URI?>\" method=\"POST\">" +
+                        "<div  ><input required style='width: 100%;padding: 15px 15px;" +
+                        "font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;margin-right: 30px;' type=\"text\" name=\"user_name\" placeholder='Имя'>" +
+                        "<br>" +
+                        "<input id='number1' required style='margin-top:20px;width: 100%;font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;" +
+                        "margin-right: 30px;padding: 15px 15px;'" +
+                        " type=\"text\" name=\"user_phone\" placeholder='Номер телефона'>" +
+                        "</div>" +
+                        // "<button type=\"submit\">send</button>" +
+                        "</form>",
+                    autoHide: true,
+                    offsetLeft: 0,
+                    offsetTop: 0,
+                    width: 400,
+                    height: 325,
+                    darkMode: true,
+                    lightShadow: true,
+                    overlay: true,
+                    closeByEsc: true,
+                    titleBar: true,
+                    closeIcon: true,
+                    draggable: true,
+                    contentColor: "red",
+                    buttons: [
+                        new BX.PopupWindowButton({
+                            text: "Отправить",
+                            className: "webform-button-link-cancel",
+                            id: "send",
+                            events: {
+                                click: function () {
+                                    this._formid = "call_id"
+                                    this._form = BX(this._formid);
+
+                                    let name = this._form.querySelector('input[name=user_name]').value;
+                                    let phone = this._form.querySelector('input[name=user_phone]').value;
+                                    BX.ajax({
+                                        url: '/local/ajax/call_ajax.php',
+                                        method: 'POST',
+                                        dataType: "json",
+                                        data: {user_name: name, user_phone: phone, submit: "submit", id: 13},
+                                        onsuccess: function (result) {
+                                            let popupTitle, popupContent = '',
+                                                contentColor;
+                                            //alert(result.ERROR_MESSAGE+" "+result.length );
+                                            if (result.ERROR_MESSAGE.length > 0) {
+                                                popupTitle = 'Ошибка';
+                                                result.ERROR_MESSAGE.forEach(function (item) {
+                                                    popupContent += '<div style="text-align: center; color: red;">' + item + '</div>';
+                                                });
+                                                contentColor = 'red';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            } else {
+                                                popupTitle = 'Заказ принят';
+                                                popupContent += '<div style="text-align: center; color: red;">Мы свяжемся в Вами в близжайшее время.</div>';
+                                                contentColor = 'white';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            }
+
+                                            popup.setContent(popupContent);
+                                            popup.setTitleBar(popupTitle);
+                                            popup.show();
+                                            var win = document.getElementById("send");
+                                            win.remove();
+
+
+                                        },
+                                        onfailure: function (e) {
+                                            console.log(e);
+                                        }
+                                    });
+                                }
+                            }
+                        }),
+                        new BX.PopupWindowButton({
+                            text: "Закрыть",
+                            className: "webform-button-link-cancel",
+                            events: {
+                                click: function () {
+                                    this.popupWindow.destroy();
+                                }
+                            }
+                        })
+                    ],
+                });
+                popup.setTitleBar("Получить консультацию");
+                popup.show();
+                var result_consult = new BX.MaskedInput({
+                    mask: "+7 999 999 99 99",
+                    input: BX('number1'),
+                    placeholder: '_'
+                });
+                $('input[name="user_name"]').on('keypress', function() {
+                    var that = this;
+                    setTimeout(function() {
+                        var res = /[^а-яА-ЯїЇєЄіІёЁA-Za-z ]/g.exec(that.value);
+                        that.value = that.value.replace(res, '');
+                    }, 0);
+                });
+
+            }
+        };
+        BX.ConsultRequest.create = function (id, form) {
+            _self = new BX.ConsultRequest(id, form);
+            return _self;
+        };
+
+    }
+
+
+    BX.ConsultRequest.create('consult');
+    BX.ConsultRequest.create('consult1');
+
+    if (typeof (BX.OtzyvRequest) === 'undefined') {
+        BX.OtzyvRequest = function (id, form) {
+            this._id = id;
+            this._formid = form;
+            this.event = 'click';
+            this._element = BX(this._id);
+            //this._form = BX(this._formid);
+            this._submitHandler = BX.delegate(this._updatePerconalDataHandler, this);
+            BX.bind(this._element, this.event, this._submitHandler);
+
+        };
+
+        BX.OtzyvRequest.prototype = {
+            _updatePerconalDataHandler: function (e) {
+                e.preventDefault();
+                var popup = BX.PopupWindowManager.create("popup-message3", null, {
+                    content: "<form id='call_id' action=\"<?=POST_FORM_ACTION_URI?>\" method=\"POST\">" +
+                        "<div  ><input style='margin-top:15x;width: 100%;padding: 15px 15px;" +
+                        "font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;margin-right: 30px;' type=\"text\" name=\"user_name\" placeholder='Имя'>" +
+                        // "<input id='number3' style='margin-top:20px;width: 100%;font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;" +
+                        // "margin-right: 30px;padding: 15px 15px;'" +
+                        // " type=\"text\" name=\"user_phone\" placeholder='Номер телефона'>" +
+                        "<textarea style='margin-top:20px;width: 100%;font-size: 16px;border-radius: 5px;border: 1px solid #616161;display: block;" +
+                        "margin-right: 30px;padding: 15px 15px;'" +
+                        " type=\"text\" name=\"user_otzyv\" placeholder='Ваш отзыв'>" +
+                        "</textarea>"+
+                        "</div></form>",
+                    autoHide: true,
+                    offsetLeft: 0,
+                    offsetTop: 0,
+                    height: 325,
+                    width: 400,
+                    darkMode: true,
+                    lightShadow: true,
+                    overlay: true,
+                    closeByEsc: true,
+                    titleBar: true,
+                    closeIcon: true,
+                    draggable: true,
+                    contentColor: "red",
+                    events: {
+                        onPopupClose: function() {
+                            // Событие при закрытии окна
+                            console.log('a');
+                        }
+                    },
+                    buttons: [
+                        new BX.PopupWindowButton({
+                            text: "Отправить",
+                            className: "webform-button-link-cancel",
+                            id: "send",
+                            events: {
+                                click: function () {
+                                    this._formid = "call_id"
+                                    this._form = BX(this._formid);
+
+                                    let name = this._form.querySelector('input[name=user_name]').value;
+                                    // let phone = this._form.querySelector('input[name=user_phone]').value;
+                                    let otzyv = this._form.querySelector('textarea[name=user_otzyv]').value;
+                                    BX.ajax({
+                                        url: '/local/ajax/call_ajax2.php',
+                                        method: 'POST',
+                                        dataType: "json",
+                                        data: {user_name: name,
+                                            // user_phone: phone,
+                                            submit: "submit", id: 15, user_otzyv: otzyv},
+                                        onsuccess: function (result) {
+                                            let popupTitle, popupContent = '',
+                                                contentColor;
+                                            //alert(result.ERROR_MESSAGE+" "+result.length );
+                                            if (result.ERROR_MESSAGE.length > 0) {
+                                                popupTitle = 'Ошибка';
+                                                result.ERROR_MESSAGE.forEach(function (item) {
+                                                    popupContent += '<div style="text-align: center; color: red;">' + item + '</div>';
+                                                });
+                                                contentColor = 'red';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            } else {
+                                                popupTitle = 'Спасибо за отзыв';
+                                                popupContent += '<div style="text-align: center; color: red;">Благодарим за отзыв</div>';
+                                                contentColor = 'white';
+                                                setTimeout(() => popup.destroy(), 1000);
+                                            }
+
+                                            popup.setContent(popupContent);
+                                            popup.setTitleBar(popupTitle);
+                                            popup.show();
+                                            var win = document.getElementById("send");
+                                            win.remove();
+
+                                        },
+                                        onfailure: function (e) {
+                                            console.log(e);
+                                        }
+                                    });
+                                }
+                            }
+                        }),
+                        new BX.PopupWindowButton({
+                            text: "Закрыть",
+                            className: "webform-button-link-cancel",
+                            events: {
+                                click: function () {
+                                    this.popupWindow.destroy();
+                                }
+                            }
+                        })
+                    ]
+                });
+                popup.setTitleBar("Оставить отзыв");
+                popup.show();
+                var result_call = new BX.MaskedInput({
+                    mask: "+7 999 999 99 99",
+                    input: BX('number3'),
+                    placeholder: '_'
+                });
+                $('input[name="user_name"]').on('keypress', function() {
+                    var that = this;
+                    setTimeout(function() {
+                        var res = /[^а-яА-ЯїЇєЄіІёЁA-Za-z ]/g.exec(that.value);
+                        that.value = that.value.replace(res, '');
+                    }, 0);
+                });
+            }
+        };
+        BX.OtzyvRequest.create = function (id, form) {
+            _self = new BX.OtzyvRequest(id, form);
+            return _self;
+        };
+
+    }
+    BX.OtzyvRequest.create('call-ot');
+
+
+
+    if (typeof (BX.BuyDataComponent) === 'undefined') {
+        BX.BuyDataComponent = function (id, form) {
+            this._id = id;
+            this._formid = form;
+            this.event = 'click';
+            this._element = BX(this._id);
+            this._form = BX(this._formid);
+            this._submitHandler = BX.delegate(this._updatePerconalDataHandler, this);
+            BX.bind(this._element, this.event, this._submitHandler);
+
+        };
+        BX.BuyDataComponent.prototype = {
+            _updatePerconalDataHandler: function (e) {
+                e.preventDefault();
+                let fieldValue;
+                let name = this._form.querySelector('input[name=user_name]').value;
+                let phone = this._form.querySelector('input[name=user_phone]').value;
+                let item = this._form.querySelector('input[name=MESSAGE]').value;
+                let bxsessid = this._form.querySelector('input[name=sessid]').value;
+                let captcha_word = this._form.querySelector('input[name=captcha_word]').value;
+                let captcha_code = this._form.querySelector('input[name=captcha_code').value;
+                let submit = this._form.querySelector('button[name=submit]').value;
+                let url = '/local/templates/megarent/components/bitrix/news/catalogtemp/bitrix/news.detail/.default/ajax.php';
+
+                BX.ajax({
+                    url: url,
+                    method: 'POST',
+                    dataType: "json",
+                    data: {sessid: bxsessid, user_name: name, user_phone: phone, MESSAGE: item, submit: submit,captcha_word: captcha_word, captcha_code: captcha_code},
+                    onsuccess: function (result) {
+                        console.log(result);
+                        let popupTitle, popupContent = '',
+                            contentColor;
+                        if (result.ERROR_MESSAGE.length > 0) {
+                            popupTitle = 'Ошибка';
+                            result.ERROR_MESSAGE.forEach(function (item) {
+                                popupContent += '<div style="text-align: center; color: red;">' + item + '</div>';
+                            });
+                            contentColor = 'red';
+                        } else {
+                            popupTitle = 'Заказ принят';
+                            popupContent += '<div style="text-align: center;color: black">Мы свяжемся в Вами в близжайшее время.</div>';
+                            contentColor = 'white';
+                        }
+
+                        var popup = BX.PopupWindowManager.create("popup-message", null, {
+                            content: popupContent,
+                            autoHide: false,
+                            offsetLeft: 0,
+                            offsetTop: 0,
+                            darkMode: true,
+                            lightShadow: true,
+                            overlay: true,
+                            closeByEsc: true,
+                            titleBar: true,
+                            closeIcon: false,
+                            draggable: true,
+                            contentColor: contentColor,
+                            buttons: [
+                                new BX.PopupWindowButton({
+                                    text: "Закрыть",
+                                    className: "webform-button-link-cancel",
+                                    events: {
+                                        click: function () {
+                                            this.popupWindow.destroy();
+                                        }
+                                    }
+                                })
+                            ]
+                        });
+                        popup.setTitleBar(popupTitle);
+                        popup.show();
+
+
+                    },
+                    onfailure: function (e) {
+                        console.log(e);
+                    }
+                });
+
+            }
+        };
+        BX.BuyDataComponent.create = function (id, form) {
+            _self = new BX.BuyDataComponent(id, form);
+            return _self;
+        };
+
+    }
+    BX.BuyDataComponent.create('buy-submit', 'buy-form');
+});

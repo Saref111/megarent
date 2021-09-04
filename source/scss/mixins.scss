@@ -1,0 +1,53 @@
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+@mixin font($size: 14px, $weight: 400, $color: #000, $name: "Open Sans") {
+  font-family: $name, "Arial", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin hover-focus-active {
+
+  &:hover,
+  &:focus {
+    @media (hover: hover) {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    @media (hover: hover) {
+      opacity: 0.4;
+    }
+  }
+}
+
+@mixin hover-active($hover, $active) {
+
+  &:hover,
+  &:focus {
+    background-color: $hover;
+  }
+
+  &:active {
+    background-color: $active;
+  }
+}
+
+@mixin transition($property: all, $duration: 500ms, $tf: ease-in-out) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $tf;
+}
