@@ -1,0 +1,14 @@
+.search-section {
+    width: 100%;
+    background-color: #262626;
+
+    &__wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+    }
+
+}

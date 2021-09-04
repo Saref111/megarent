@@ -1,0 +1,45 @@
+.search {
+    margin-left: auto;
+    position: relative;
+
+    &__label {
+        position: absolute;
+        left: 13px;
+        top: 7px;
+
+        &>svg {
+            stroke: #9A9A9A;
+            fill: transparent;
+        }
+    }
+
+    &__input {
+        width: 952px;
+        height: 40px;
+        padding: 11px;
+        padding-left: 44px;
+        font-family: HelveticaNeueCyr;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 15px;
+        color: #484B4C;
+    }
+
+    &__submit {
+        @include button-reset;
+
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        background-color: #FF0000;
+        border-radius: 2px;
+        width: 48px;
+        height: 38px;
+
+        &>svg {
+            stroke: #fff;
+            fill: transparent;
+        }
+    }
+}

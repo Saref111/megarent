@@ -1,0 +1,21 @@
+.categories {
+    &__button {
+        @include button-reset;
+
+        display: flex;
+        align-items: center;
+        font-family: HelveticaNeueCyr, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 15px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+
+        &>svg {
+            margin-right: 18px;
+        }
+    }
+}

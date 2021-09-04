@@ -45,5 +45,35 @@
             </nav>
         </div>
     </header>
+    <main class="page-main">
+        <section class="search-section">
+            <div class="search-section__wrapper">
+                <div class="categories">
+                    <button class="categories__button">
+                        <svg width="24" height="24">
+                            <use xlink:href="./img/sprite.svg#grid"></use>
+                        </svg>
+                        Каталог
+                    </button>
+                </div>
+                <form class="search">
+                    <label for="#search-input" class="search__label">
+                        <svg width="24" height="24">
+                            <use xlink:href="./img/sprite.svg#search"></use>
+                        </svg>  
+                    </label>
+                    <input class="search__input" type="text" name="search" id="search-input" placeholder="Поиск">
+                    <button type="submit" class="search__submit">
+                        <span class="visually-hidden">
+                            Искать
+                        </span>
+                        <svg width="24" height="24">
+                            <use xlink:href="./img/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
