@@ -1,0 +1,87 @@
+.hero-banner {
+    width: 100%;
+    padding-top: 31px;
+
+    &__wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 200px;
+        background-image: url('../img/hero-banner.png');
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__wrapper-link {
+        width: 100%;
+        min-height: 200px;
+        height: 100%;
+        display: flex;
+    }
+
+
+
+    &__main-text {
+        max-width: 353px;
+        margin: 0;
+        font-family: Montserrat, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 34px;
+        text-transform: uppercase;
+        color: #262626;
+        margin-top: 60px;
+        margin-left: 52px;
+        position: relative;
+
+        & svg {
+            position: absolute;
+            bottom: 15px;
+            left: 76px;
+        }
+    }
+
+    &__bold {
+        font-weight: 700;
+    }
+
+    &__secondary-text {
+        font-family: HelveticaNeueCyr, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 120%;
+        color: #262626;
+        margin-top: 69px;
+        margin-left: 50px;
+        max-width: 362px;
+        position: relative;
+
+        & svg {
+            position: absolute;
+            top: -55px;
+            left: -5px;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__secondary-title {
+        font-family: HelveticaNeueCyr;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 24px;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 10px;
+
+    }
+
+    &__uppercase {
+
+        text-transform: uppercase;
+
+        color: #A30A0C;
+    }
+}
