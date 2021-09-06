@@ -1,0 +1,66 @@
+.filters {
+  margin: 0;
+  padding-top: 30px;
+  border: 1px solid #e7e7e7;
+
+  &__title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin-left: 13px;
+    margin-bottom: 26px;
+    color: #6b6b6b;
+  }
+
+  &__fieldset {
+    width: 100%;
+    border: none;
+    padding: 0 15px;
+  }
+
+  &__box {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #e7e7e7;
+    }
+    & summary {
+      list-style: none;
+      padding: 25px 0;
+      padding-right: 25px;
+      position: relative;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+
+      color: #9a9a9a;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.66667 8L9.83333 12.1667L14 8' stroke='black' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    &[open] summary {
+      &::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+}

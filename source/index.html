@@ -1,115 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Megarent</title>
-    <link rel="stylesheet" href="./css/style.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/style.min.css" />
+  </head>
+  <body>
     <header class="page-header">
-        <div class="page-header__wrapper">
-            <a href="/" class="logo page-header__logo">
-                <img src="./img/logo.png" alt="Megarent logo" width="188" height="42">
+      <div class="page-header__wrapper">
+        <a href="/" class="logo page-header__logo">
+          <img
+            src="./img/logo.png"
+            alt="Megarent logo"
+            width="188"
+            height="42"
+          />
+        </a>
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a href="tel:+74957908459" class="contacts__link"
+              >+7(495)790-84-59</a
+            >
+          </li>
+          <li class="contacts__item">
+            <a href="#" class="contacts__link">
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#Viber"></use>
+              </svg>
             </a>
-            <ul class="contacts">
-                <li class="contacts__item">
-                    <a href="tel:+74957908459" class="contacts__link">+7(495)790-84-59</a>
-                </li>
-                <li class="contacts__item">
-                    <a href="#" class="contacts__link">
-                        <svg width="24" height="24">
-                            <use xlink:href="./img/sprite.svg#Viber"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="contacts__item">
-                    <a href="#" class="contacts__link">
-                        <svg width="24" height="24">
-                            <use xlink:href="./img/sprite.svg#WhatsApp"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="contacts__item">
-                    <a href="mailto:info@megarent.ru" class="contacts__link">info@megarent.ru</a>
-                </li>
-            </ul>
+          </li>
+          <li class="contacts__item">
+            <a href="#" class="contacts__link">
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#WhatsApp"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a href="mailto:info@megarent.ru" class="contacts__link"
+              >info@megarent.ru</a
+            >
+          </li>
+        </ul>
 
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#">О компании</a></li>
-                    <li class="navigation__item"><a href="#">Наши объекты</a></li>
-                    <li class="navigation__item"><a href="#">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item"><a href="#">О компании</a></li>
+            <li class="navigation__item"><a href="#">Наши объекты</a></li>
+            <li class="navigation__item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main class="page-main">
-        <section class="search-section">
-            <div class="search-section__wrapper">
-                <div class="categories">
-                    <button class="categories__button">
-                        <svg width="24" height="24">
-                            <use xlink:href="./img/sprite.svg#grid"></use>
-                        </svg>
-                        Каталог
-                    </button>
-                </div>
-                <form class="search">
-                    <label for="#search-input" class="search__label">
-                        <svg width="24" height="24">
-                            <use xlink:href="./img/sprite.svg#search"></use>
-                        </svg>  
-                    </label>
-                    <input class="search__input" type="text" name="search" id="search-input" placeholder="Поиск">
-                    <button type="submit" class="search__submit">
-                        <span class="visually-hidden">
-                            Искать
-                        </span>
-                        <svg width="24" height="24">
-                            <use xlink:href="./img/sprite.svg#search"></use>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </section>
-        <section class="hero-banner">
-            <div class="hero-banner__wrapper">
-                <a class="hero-banner__wrapper-link">
-                    <p class="hero-banner__main-text">
-                        Нужен экскаватор <span class="hero-banner__bold">сегодня?</span>
-                        <svg width="38" height="38" >
-                            <use xlink:href="./img/sprite.svg#chevrons"></use>
-                        </svg>
-                    </p>
-                    <p class="hero-banner__secondary-text">
-                        <span class="hero-banner__secondary-title">
-                            <span class="hero-banner__uppercase">Срочная</span> доставка от 2 часов
-                        </span>
-                        Снизим стоимость аренды автовышки при заказе нескольких машин!
-                        <svg width="38" height="38" >
-                            <use xlink:href="./img/sprite.svg#chevrons"></use>
-                        </svg>
-                    </p>
-                </a>
-            </div>
-        </section>
-        <ul class="pagination">
-            <li class="pagination__item">
-                <a href="#" class="pagination__link">123131</a>
-            </li>
-            <li class="pagination__item">
-                <a href="#" class="pagination__link">123131</a>
-            </li>
-            <li class="pagination__item">
-                <a href="#" class="pagination__link">123131</a>
-            </li>
-        </ul>
-        <div class="catalog-layout">
-            <div class="catalog-layout__sidebar"></div>
-            <div class="catalog-layout__main"></div>
+      <section class="search-section">
+        <div class="search-section__wrapper">
+          <div class="categories">
+            <button class="categories__button">
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#grid"></use>
+              </svg>
+              Каталог
+            </button>
+          </div>
+          <form class="search">
+            <label for="#search-input" class="search__label">
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#search"></use>
+              </svg>
+            </label>
+            <input
+              class="search__input"
+              type="text"
+              name="search"
+              id="search-input"
+              placeholder="Поиск"
+            />
+            <button type="submit" class="search__submit">
+              <span class="visually-hidden"> Искать </span>
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#search"></use>
+              </svg>
+            </button>
+          </form>
         </div>
+      </section>
+      <section class="hero-banner">
+        <div class="hero-banner__wrapper">
+          <a class="hero-banner__wrapper-link">
+            <p class="hero-banner__main-text">
+              Нужен экскаватор <span class="hero-banner__bold">сегодня?</span>
+              <svg width="38" height="38">
+                <use xlink:href="./img/sprite.svg#chevrons"></use>
+              </svg>
+            </p>
+            <p class="hero-banner__secondary-text">
+              <span class="hero-banner__secondary-title">
+                <span class="hero-banner__uppercase">Срочная</span> доставка от
+                2 часов
+              </span>
+              Снизим стоимость аренды автовышки при заказе нескольких машин!
+              <svg width="38" height="38">
+                <use xlink:href="./img/sprite.svg#chevrons"></use>
+              </svg>
+            </p>
+          </a>
+        </div>
+      </section>
+      <ul class="pagination">
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">123131</a>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">123131</a>
+        </li>
+        <li class="pagination__item">
+          <a href="#" class="pagination__link">123131</a>
+        </li>
+      </ul>
+      <div class="catalog-layout">
+        <div class="catalog-layout__sidebar">
+          <form action="" class="filters">
+            <legend class="filters__title">Фильтры</legend>
+            <fieldset class="filters__fieldset">
+              <details class="filters__box">
+                <summary>Производитель</summary>
+              </details>
+            </fieldset>
+            <fieldset class="filters__fieldset">
+              <details class="filters__box">
+                <summary>Грузо- подъемность, т</summary>
+              </details>
+            </fieldset>
+            <fieldset class="filters__fieldset">
+              <details class="filters__box">
+                <summary>Вылет стрелы, м</summary>
+              </details>
+            </fieldset>
+            <fieldset class="filters__fieldset">
+              <details class="filters__box">
+                <summary>Г/П стрелы, т</summary>
+              </details>
+            </fieldset>
+            <fieldset class="filters__fieldset">
+              <details class="filters__box">
+                <summary>Мощность двигателя, кВт</summary>
+              </details>
+            </fieldset>
+          </form>
+        </div>
+        <div class="catalog-layout__main"></div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

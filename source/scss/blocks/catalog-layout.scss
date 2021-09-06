@@ -1,0 +1,16 @@
+.catalog-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  &__sidebar {
+    max-width: 203px;
+    padding-top: 39px;
+  }
+
+  &__main {
+    max-width: 952px;
+  }
+}
