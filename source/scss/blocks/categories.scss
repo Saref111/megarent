@@ -20,31 +20,38 @@
   }
 
   &__wrapper {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    display: none;
+    &--shown {
+      display: block;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
   }
 
   &__list {
     @include list-reset;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 402px;
-    width: 700px;
-    left: 0;
-    top: calc(100% + 16px);
-    background-color: #fff;
-    padding: 30px 40px;
-    padding-bottom: 80px;
-    align-content: flex-start;
-    z-index: 111;
-    border-radius: 0px 0px 3px 3px;
+    display: none;
+    &--shown {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 402px;
+      width: 700px;
+      left: 0;
+      top: calc(100% + 16px);
+      background-color: #fff;
+      padding: 30px 40px;
+      padding-bottom: 80px;
+      align-content: flex-start;
+      z-index: 111;
+      border-radius: 0px 0px 3px 3px;
+    }
   }
 
   &__item {
