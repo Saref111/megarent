@@ -1,18 +1,19 @@
 .page-header {
+  width: 100%;
+  background-color: #e2e2e2;
+  z-index: 111;
+
+  &__wrapper {
     width: 100%;
-    background-color: #E2E2E2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 110px;
+    padding-top: 11px;
+  }
 
-    &__wrapper {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        min-height: 110px;
-        padding-top: 11px;
-    }
-
-    &__logo {
-        margin-right: 55px;
-    }
+  &__logo {
+    margin-right: 55px;
+  }
 }

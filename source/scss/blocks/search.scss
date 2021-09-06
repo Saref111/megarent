@@ -1,45 +1,46 @@
 .search {
-    margin-left: auto;
-    position: relative;
+  margin-left: auto;
+  position: relative;
+  z-index: 111;
 
-    &__label {
-        position: absolute;
-        left: 13px;
-        top: 7px;
+  &__label {
+    position: absolute;
+    left: 13px;
+    top: 7px;
 
-        &>svg {
-            stroke: #9A9A9A;
-            fill: transparent;
-        }
+    & > svg {
+      stroke: #9a9a9a;
+      fill: transparent;
     }
+  }
 
-    &__input {
-        width: 952px;
-        height: 40px;
-        padding: 11px;
-        padding-left: 44px;
-        font-family: HelveticaNeueCyr;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 15px;
-        color: #484B4C;
+  &__input {
+    width: 952px;
+    height: 40px;
+    padding: 11px;
+    padding-left: 44px;
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    color: #484b4c;
+  }
+
+  &__submit {
+    @include button-reset;
+
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    background-color: #ff0000;
+    border-radius: 2px;
+    width: 48px;
+    height: 38px;
+
+    & > svg {
+      stroke: #fff;
+      fill: transparent;
     }
-
-    &__submit {
-        @include button-reset;
-
-        position: absolute;
-        right: 1px;
-        top: 1px;
-        background-color: #FF0000;
-        border-radius: 2px;
-        width: 48px;
-        height: 38px;
-
-        &>svg {
-            stroke: #fff;
-            fill: transparent;
-        }
-    }
+  }
 }

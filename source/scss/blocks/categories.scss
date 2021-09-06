@@ -1,21 +1,76 @@
 .categories {
-    &__button {
-        @include button-reset;
+  position: relative;
+  &__button {
+    @include button-reset;
 
-        display: flex;
-        align-items: center;
-        font-family: HelveticaNeueCyr, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 15px;
-        /* identical to box height */
+    display: flex;
+    align-items: center;
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    /* identical to box height */
 
+    color: #ffffff;
 
-        color: #FFFFFF;
-
-        &>svg {
-            margin-right: 18px;
-        }
+    & > svg {
+      margin-right: 18px;
     }
+  }
+
+  &__wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  &__list {
+    @include list-reset;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 402px;
+    width: 700px;
+    left: 0;
+    top: calc(100% + 16px);
+    background-color: #fff;
+    padding: 30px 40px;
+    padding-bottom: 80px;
+    align-content: flex-start;
+    z-index: 111;
+    border-radius: 0px 0px 3px 3px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    margin-right: 47px;
+
+    &:last-child {
+      position: absolute;
+      bottom: 40px;
+      right: 88px;
+
+      & a {
+        color: rgba(#333, 0.5);
+      }
+    }
+  }
+
+  &__link {
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 14px;
+    color: #333333;
+    &--current {
+      color: #ff0000;
+    }
+  }
 }
