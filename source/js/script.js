@@ -15,7 +15,16 @@ const setCategoriesToggler = () => {
 
   categoriesTogglerElement.addEventListener("click", clickHandler);
 };
+const initSwiper = () => {
+  const swiper = new Swiper(".my-swiper", {
+    slidesPerView: 1,
+    watchSlidesVisibility: true,
+
+    slideToClickedSlide: true,
+  });
+};
 
 document.addEventListener("DOMContentLoaded", (e) => {
   setCategoriesToggler();
+  initSwiper();
 });
