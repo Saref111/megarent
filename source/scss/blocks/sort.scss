@@ -1,0 +1,126 @@
+.sort {
+  border: 1px solid #e7e7e7;
+  padding: 30px 20px;
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #262626;
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item-sorting {
+    margin-right: 25px;
+    color: #9a9a9a;
+    &--dir {
+      & label {
+        padding-right: 15px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          border: 1px solid currentColor;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          width: 5px;
+          height: 5px;
+          right: 0;
+          top: 5px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    & input:checked + label {
+      color: red;
+    }
+    & > input {
+      display: none;
+    }
+  }
+
+  &__item-filter {
+    background-color: #f1f1f1;
+    margin-right: 25px;
+    padding: 7px 10px;
+    max-height: 30px;
+    display: flex;
+
+    &:last-child {
+      background-color: transparent;
+      & button {
+        @include button-reset;
+        position: absolute;
+        text-decoration: underline;
+        color: #6b6b6b;
+      }
+    }
+  }
+  &__type {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+  &__value {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #262626;
+  }
+
+  &__clear {
+    @include button-reset;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 1px;
+      background-color: #000;
+      top: 2px;
+      left: 18px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 1px;
+      background-color: #000;
+      top: 2px;
+      left: 18px;
+      transform: rotate(-45deg);
+    }
+  }
+}

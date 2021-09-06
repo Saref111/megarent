@@ -425,6 +425,48 @@
               <a href="#" class="tags__link">КРАНЫ LIEBHERR</a>
             </li>
           </ul>
+          <form action="#" class="sort">
+            <fieldset class="sort__fieldset">
+              <span class="sort__title">Сортировать по:</span>
+              <ul class="sort__list">
+                <li class="sort__item-sorting">
+                  <input type="radio" name="filter" id="populat-filter" />
+                  <label for="populat-filter">популярности</label>
+                </li>
+                <li class="sort__item-sorting sort__item-sorting--dir">
+                  <input type="radio" name="filter" id="name-filter" checked />
+                  <label for="name-filter">названию</label>
+                </li>
+                <li class="sort__item-sorting sort__item-sorting--dir">
+                  <input type="radio" name="filter" id="price-filter" />
+                  <label for="price-filter">цене</label>
+                </li>
+                <li class="sort__item-sorting">
+                  <input type="radio" name="filter" id="reviews-filter" />
+                  <label for="reviews-filter">количеству отзывов</label>
+                </li>
+                <li class="sort__item-sorting">
+                  <input type="radio" name="filter" id="rating-filter" />
+                  <label for="rating-filter">рейтингу</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="sort__fieldset">
+              <span class="sort__title">Выбранные фильтры:</span>
+              <ul class="sort__list">
+                <li class="sort__item-filter">
+                  <span class="sort__type">Производитель:</span
+                  ><span class="sort__value">Liebherr</span>
+                  <button class="sort__clear" type="button">
+                    <span class="visually-hidden">Сбросить</span>
+                  </button>
+                </li>
+                <li class="sort__item-filter">
+                  <button type="button">Сбросить все фильтры</button>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
         </div>
       </div>
     </main>
