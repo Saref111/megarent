@@ -1,0 +1,32 @@
+.tags {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    margin-right: 4px;
+    margin-bottom: 6px;
+  }
+
+  &__link {
+    display: block;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 10px;
+    line-height: 10px;
+    /* identical to box height */
+    padding: 9px;
+    text-transform: uppercase;
+
+    color: #262626;
+
+    &:hover {
+      background-color: red;
+      color: #fff;
+    }
+  }
+}
