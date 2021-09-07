@@ -1,3 +1,8 @@
 .catalog-list {
   @include list-reset;
+  &__item {
+    border: 1px solid #e7e7e7;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+  }
 }

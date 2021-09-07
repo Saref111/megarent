@@ -249,6 +249,8 @@
 }
 
 .product-info--catalog {
+  flex-wrap: wrap;
+  padding-bottom: 0;
   & .product-info {
     &__img-wrapper {
       width: 430px;
@@ -261,6 +263,124 @@
           display: none;
         }
       }
+    }
+
+    &__pricing-list {
+      @include list-reset;
+      max-width: 430px;
+      margin-bottom: 25px;
+    }
+
+    &__options-list {
+      width: 430px;
+    }
+
+    &__price-item {
+      padding: 0;
+      padding-top: 14px;
+      padding-left: 10px;
+      padding-right: 12px;
+      padding-bottom: 14px;
+      white-space: nowrap;
+      min-width: unset;
+      width: 144px;
+    }
+
+    &__header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding-bottom: 60px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #9a9a9a;
+        left: 0;
+        bottom: 35px;
+      }
+    }
+
+    &__title {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+
+      color: #262626;
+    }
+
+    &__reviews-link {
+      margin-right: 30px;
+      margin-left: auto;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      color: #262626;
+    }
+
+    &__review-mark {
+      margin-left: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      color: #262626;
+    }
+
+    &__text {
+      max-width: 430px;
+      margin: 0;
+      margin-bottom: 25px;
+      margin-top: -25px;
+      font-family: "HelveticaNeueCyr", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+      color: #262626;
+    }
+
+    &__feature-item {
+      &:before {
+        display: none;
+      }
+      font-family: "HelveticaNeueCyr", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+      color: #262626;
+      /* identical to box height */
+      width: 50%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-right: 10px;
+
+      & svg {
+        margin-right: 20px;
+      }
+    }
+
+    &__features {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__img-wrapper .my-swiper li {
+      height: auto;
     }
   }
 }

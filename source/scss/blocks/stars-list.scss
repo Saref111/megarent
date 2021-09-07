@@ -1,0 +1,16 @@
+.stars-list {
+  @include list-reset;
+  display: flex;
+  padding-top: 10px;
+  &__star {
+    & svg {
+      fill: #e0e0e0;
+    }
+
+    &--fill {
+      & svg {
+        fill: red;
+      }
+    }
+  }
+}
