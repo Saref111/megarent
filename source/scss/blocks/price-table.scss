@@ -1,0 +1,48 @@
+.price-table {
+  width: 100%;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__header {
+    background-color: #f1f1f1;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+
+  &__td {
+    padding: 15px 30px;
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  &__tr {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  &__text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    /* 1 */
+
+    color: #333333;
+  }
+}

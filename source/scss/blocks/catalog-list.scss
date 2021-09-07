@@ -4,5 +4,9 @@
     border: 1px solid #e7e7e7;
     padding: 40px 30px;
     margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
