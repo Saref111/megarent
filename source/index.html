@@ -182,15 +182,15 @@
           </a>
         </div>
       </section>
-      <ul class="pagination">
-        <li class="pagination__item">
-          <a href="#" class="pagination__link">123131</a>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">123131</a>
         </li>
-        <li class="pagination__item">
-          <a href="#" class="pagination__link">123131</a>
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">123131</a>
         </li>
-        <li class="pagination__item">
-          <a href="#" class="pagination__link">123131</a>
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">123131</a>
         </li>
       </ul>
       <div class="catalog-layout">
@@ -1337,6 +1337,48 @@
               </div>
             </li>
           </ul>
+          <div class="pagination">
+            <button class="pagination__more-button">Загрузить еще</button>
+            <ul class="pagination__list">
+              <li class="pagination__item pagination__item--prev">
+                <a href="#" class="pagination__button pagination__button--prev">
+                  <svg
+                    width="24"
+                    height="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <use xlink:href="./img/sprite.svg#pag-arrow" x="" y="" />
+                  </svg>
+                  <span class="visually-hidden">Назад</span>
+                </a>
+              </li>
+              <li class="pagination__item">
+                <a href="#" class="pagination__link pagination__link--active"
+                  >1</a
+                >
+              </li>
+              <li class="pagination__item pagination__item">
+                <a href="#" class="pagination__link">2</a>
+              </li>
+              <li class="pagination__item pagination__item">
+                <a href="#" class="pagination__link">3</a>
+              </li>
+              <li class="pagination__item pagination__item--next">
+                <a href="#" class="pagination__button pagination__button--next">
+                  <svg
+                    width="24"
+                    height="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <use xlink:href="./img/sprite.svg#pag-arrow" x="" y="" />
+                  </svg>
+                  <span class="visually-hidden">Вперед</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>

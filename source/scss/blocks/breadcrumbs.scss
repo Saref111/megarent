@@ -1,0 +1,43 @@
+.breadcrumbs {
+  @include list-reset;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+
+    &::before {
+      position: absolute;
+      content: "/";
+      width: 5px;
+      height: 100%;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #9a9a9a;
+      right: -12px;
+      top: 5px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9a9a9a;
+  }
+}
