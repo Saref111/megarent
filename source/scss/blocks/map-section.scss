@@ -1,0 +1,86 @@
+.map-section {
+    position: relative;
+}
+
+.map-section__popup {
+    position: absolute;
+    width: 420px;
+    height: 360px;
+    background-color: #fff;
+    z-index: 1;
+    top: 55px;
+    right: 40px;
+    padding: 50px 40px;
+}
+
+.map-section iframe {
+    width: 100%;
+    min-height: 469px;
+}
+
+.map-section__title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    /* 1 */
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.map-section__city {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    display: block;
+
+    /* 1 */
+
+    color: #333333;
+}
+
+.map-section__address {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 22px;
+    color: #333333;
+}
+
+.map-section__address::before {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 17px;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.0078 12.2995L8.5 16.8074L3.99217 12.2995C3.10062 11.408 2.49347 10.272 2.24749 9.03542C2.00152 7.79879 2.12777 6.517 2.61028 5.35212C3.09279 4.18725 3.90989 3.19161 4.95825 2.49112C6.00661 1.79063 7.23915 1.41675 8.5 1.41675C9.76086 1.41675 10.9934 1.79063 12.0418 2.49112C13.0901 3.19161 13.9072 4.18725 14.3897 5.35212C14.8722 6.517 14.9985 7.79879 14.7525 9.03542C14.5065 10.272 13.8994 11.408 13.0078 12.2995ZM8.5 9.20836C8.87573 9.20836 9.23606 9.0591 9.50174 8.79343C9.76741 8.52775 9.91667 8.16742 9.91667 7.79169C9.91667 7.41597 9.76741 7.05563 9.50174 6.78996C9.23606 6.52428 8.87573 6.37503 8.5 6.37503C8.12428 6.37503 7.76394 6.52428 7.49827 6.78996C7.23259 7.05563 7.08334 7.41597 7.08334 7.79169C7.08334 8.16742 7.23259 8.52775 7.49827 8.79343C7.76394 9.0591 8.12428 9.20836 8.5 9.20836Z' fill='%23FF0000'/%3E%3C/svg%3E%0A");
+    left: 0px;
+}
+
+.map-section__text {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 140%;
+    /* identical to box height, or 20px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF0000;
+    width: 340px;
+    height: 50px;
+    color: #FFFFFF;
+}

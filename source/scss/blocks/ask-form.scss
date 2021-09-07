@@ -1,0 +1,149 @@
+.ask-form {
+  padding: 55px 40px;
+  padding-left: 127px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f1f1f1;
+  margin-top: 100px;
+  flex-direction: column;
+  max-height: 431px;
+  margin-bottom: 100px;
+}
+
+.ask-form__title {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+
+  /* 1 */
+  margin-bottom: 17px;
+  color: #333333;
+  position: relative;
+}
+
+.ask-form__title::before {
+  position: absolute;
+  content: "";
+  width: 72px;
+  height: 72px;
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.1' cx='36' cy='36' r='36' fill='%23FF0000'/%3E%3Ccircle cx='36.0001' cy='36.0001' r='22.0645' fill='%23FF0000'/%3E%3Cpath d='M33.9882 38.6956C33.9882 37.8383 34.1761 37.1293 34.5519 36.5687C34.9441 36.0081 35.5078 35.3899 36.243 34.7139C36.7822 34.2193 37.1744 33.8071 37.4195 33.4773C37.6809 33.1311 37.8116 32.7436 37.8116 32.315C37.8116 31.7049 37.5665 31.2268 37.0763 30.8806C36.6025 30.5178 35.9653 30.3365 35.1646 30.3365C34.3967 30.3365 33.7104 30.5013 33.1059 30.8311C32.5177 31.1443 32.0193 31.5895 31.6108 32.1666L28.6453 30.4107C29.3315 29.3555 30.2547 28.5393 31.4148 27.9623C32.5912 27.3852 33.98 27.0967 35.5813 27.0967C37.4603 27.0967 38.9635 27.5006 40.0909 28.3085C41.2347 29.1164 41.8066 30.2375 41.8066 31.6719C41.8066 32.3479 41.6922 32.9415 41.4634 33.4526C41.251 33.9637 40.9814 34.4006 40.6546 34.7633C40.3442 35.1096 39.9357 35.5135 39.4292 35.9752C38.8246 36.5193 38.3835 36.9809 38.1057 37.3601C37.8279 37.7228 37.6891 38.168 37.6891 38.6956H33.9882ZM35.8509 44.9031C35.181 44.9031 34.6173 44.6888 34.1598 44.2601C33.7186 43.815 33.498 43.2791 33.498 42.6526C33.498 42.0261 33.7186 41.5067 34.1598 41.0945C34.6009 40.6659 35.1646 40.4515 35.8509 40.4515C36.5371 40.4515 37.1008 40.6659 37.542 41.0945C37.9832 41.5067 38.2037 42.0261 38.2037 42.6526C38.2037 43.2791 37.975 43.815 37.5175 44.2601C37.0763 44.6888 36.5208 44.9031 35.8509 44.9031Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  top: -15px;
+  left: -90px;
+}
+
+.ask-form__text {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+
+  /* 1 */
+  max-width: 271px;
+  color: #333333;
+}
+
+.ask-form__fields {
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  max-width: 420px;
+  justify-content: space-between;
+}
+
+.ask-form__fields input {
+  height: 51px;
+  width: 195px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 18px 20px;
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+
+  /* 1 */
+
+  color: #333333;
+}
+
+.ask-form__fields textarea {
+  padding: 20px;
+  width: 100%;
+  margin-top: 25px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+
+  /* 1 */
+  max-height: 96px;
+  color: #333333;
+}
+
+.ask-form__btn {
+  padding: 15px 30px;
+  background-color: #333333;
+  border: 1px solid #333333;
+  box-sizing: border-box;
+  border-radius: 33px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.ask-form__btn:hover,
+.ask-form__btn:focus {
+  background-color: #4f4f4f;
+}
+
+.ask-form__policies {
+  margin: 0;
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  /* or 17px */
+
+  /* 1 */
+  padding-top: 8px;
+  width: 50%;
+  color: #333333;
+}
+
+.ask-form__policies a {
+  color: #333333;
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  font-weight: 550;
+  text-decoration: underline;
+}
+
+.ask-form__policies a:hover,
+.ask-form__policies a:focus {
+  color: red;
+}
