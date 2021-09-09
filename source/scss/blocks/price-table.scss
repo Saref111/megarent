@@ -46,3 +46,9 @@
     color: #333333;
   }
 }
+
+@media (max-width: 768px) {
+  .price-table {
+    overflow: auto;
+  }
+}

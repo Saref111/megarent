@@ -86,3 +86,33 @@
         color: #A30A0C;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-banner {
+        &__main-text {
+            & svg {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-banner {
+        &__wrapper-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__secondary-text,
+        &__main-text {
+            margin: 5px;
+        }
+
+        & svg {
+            display: none;
+        }
+    }
+}

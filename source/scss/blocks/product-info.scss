@@ -95,8 +95,7 @@
   height: 307px;
 }
 
-.my-swiper-thumbs {
-}
+.my-swiper-thumbs {}
 
 .my-swiper-thumbs__btn {
   position: absolute;
@@ -251,6 +250,7 @@
 .product-info--catalog {
   flex-wrap: wrap;
   padding-bottom: 0;
+
   & .product-info {
     &__img-wrapper {
       width: 430px;
@@ -259,6 +259,7 @@
       & .my-swiper li {
         width: 430px;
         min-width: 430px;
+
         &:hover::before {
           display: none;
         }
@@ -357,7 +358,9 @@
       &:before {
         display: none;
       }
-      font-family: "HelveticaNeueCyr", sans-serif;
+
+      font-family: "HelveticaNeueCyr",
+      sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
@@ -379,8 +382,78 @@
       display: flex;
       flex-wrap: wrap;
     }
+
     &__img-wrapper .my-swiper li {
       height: auto;
+    }
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .product-info--catalog .product-info__img-wrapper,
+  .product-info--catalog .product-info__img-wrapper .my-swiper li {
+    min-width: 100%;
+  }
+
+  .product-info--catalog .product-info__section-title {
+    order: 1;
+  }
+
+  .product-info--catalog .product-info__options-list {
+    width: 100%;
+    order: 3;
+    width: 50%;
+  }
+
+  .product-info--catalog .product-info__pricing-list {
+    flex-direction: column;
+    order: 2;
+    width: 50%;
+  }
+
+  .product-info--catalog .product-info__options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-info--catalog .product-info__order-btn {
+    order: 4;
+  }
+
+  .product-info--catalog .product-info__price-item:not(:last-child) {
+    border: 1px solid #e0e0e0;
+  }
+
+  .product-info--catalog .product-info__text {
+    margin-top: 30px;
+  }
+
+  .product-info--catalog {
+    & .product-info__header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    & .product-info__title {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .product-info--catalog {
+    .product-info__pricing-list {
+      width: 100%;
+    }
+
+    .product-info__price-item {
+      width: 100%;
+    }
+
+    .product-info__options-list {
+      width: 100%;
     }
   }
 }

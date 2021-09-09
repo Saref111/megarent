@@ -2,12 +2,14 @@
   border: 1px solid #e7e7e7;
   padding: 30px 20px;
   margin-bottom: 30px;
+
   &__fieldset {
     border: none;
     padding: 0;
     margin: 0;
     display: flex;
   }
+
   &__title {
     display: flex;
     align-items: center;
@@ -29,6 +31,7 @@
   &__item-sorting {
     margin-right: 25px;
     color: #9a9a9a;
+
     &--dir {
       & label {
         padding-right: 15px;
@@ -48,10 +51,12 @@
         }
       }
     }
-    & input:checked + label {
+
+    & input:checked+label {
       color: red;
     }
-    & > input {
+
+    &>input {
       display: none;
     }
   }
@@ -65,6 +70,7 @@
 
     &:last-child {
       background-color: transparent;
+
       & button {
         @include button-reset;
         position: absolute;
@@ -73,6 +79,7 @@
       }
     }
   }
+
   &__type {
     display: block;
     font-family: "Montserrat", sans-serif;
@@ -84,6 +91,7 @@
 
     color: #000000;
   }
+
   &__value {
     display: block;
     font-family: "Montserrat", sans-serif;
@@ -103,6 +111,7 @@
     width: 25px;
     height: 25px;
     position: relative;
+
     &::before {
       position: absolute;
       content: "";
@@ -113,6 +122,7 @@
       left: 18px;
       transform: rotate(45deg);
     }
+
     &::after {
       position: absolute;
       content: "";
@@ -122,6 +132,23 @@
       top: 2px;
       left: 18px;
       transform: rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .sort {
+    &__fieldset {
+      flex-wrap: wrap;
+    }
+
+    &__list {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    &__item-filter:last-child {
+      width: 125px;
     }
   }
 }
