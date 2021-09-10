@@ -1,14 +1,14 @@
 .search {
   margin-left: auto;
   position: relative;
-  z-index: 111;
+  z-index: 110;
 
   &__label {
     position: absolute;
     left: 13px;
     top: 7px;
 
-    &>svg {
+    & > svg {
       stroke: #9a9a9a;
       fill: transparent;
     }
@@ -38,13 +38,12 @@
     width: 48px;
     height: 38px;
 
-    &>svg {
+    & > svg {
       stroke: #fff;
       fill: transparent;
     }
   }
 }
-
 
 @media (max-width: 1200px) {
   .search {

@@ -10,6 +10,9 @@
   <body>
     <header class="page-header">
       <div class="page-header__wrapper">
+        <button class="page-header__toggler" type="button">
+          <span class="visually-hidden">Меню</span>
+        </button>
         <a href="/" class="logo page-header__logo">
           <img
             src="./img/logo.png"
@@ -46,11 +49,69 @@
         </ul>
 
         <nav class="navigation">
+          <div class="navigation__header">
+            <h2 class="navigation__title">МЕГАРЕНТ</h2>
+            <button class="navigation__close"></button>
+          </div>
           <ul class="navigation__list">
-            <li class="navigation__item"><a href="#">О компании</a></li>
-            <li class="navigation__item"><a href="#">Наши объекты</a></li>
-            <li class="navigation__item"><a href="#">Контакты</a></li>
+            <li class="navigation__item navigation__item--mobile">
+              <a href="#"
+                ><svg
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <use xlink:href="img/sprite.svg#ci_grid" /></svg
+                >Вся техника</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="#"
+                ><svg
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <use xlink:href="img/sprite.svg#info" /></svg
+                >О компании</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="#"
+                ><svg
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <use
+                    xlink:href="img/sprite.svg#carbon_location-filled"
+                  /></svg
+                >Наши объекты</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="#"
+                ><svg
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <use
+                    xlink:href="img/sprite.svg#carbon_phone-voice-filled"
+                  /></svg
+                >Контакты</a
+              >
+            </li>
           </ul>
+          <div class="navigation__footer">
+            <a href="tel:+74957908459" class="navigation__phone"
+              >+7 (495) 790-84-59</a
+            >
+          </div>
         </nav>
       </div>
     </header>
@@ -1348,7 +1409,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <use xlink:href="./img/sprite.svg#pag-arrow"/>
+                    <use xlink:href="./img/sprite.svg#pag-arrow" />
                   </svg>
                   <span class="visually-hidden">Назад</span>
                 </a>
@@ -1372,7 +1433,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <use xlink:href="./img/sprite.svg#pag-arrow"/>
+                    <use xlink:href="./img/sprite.svg#pag-arrow" />
                   </svg>
                   <span class="visually-hidden">Вперед</span>
                 </a>
@@ -1620,7 +1681,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
-                      <use xlink:href="./img/sprite.svg#pag-arrow"/>
+                      <use xlink:href="./img/sprite.svg#pag-arrow" />
                     </svg>
                     <span class="visually-hidden">Вперед</span>
                   </a>

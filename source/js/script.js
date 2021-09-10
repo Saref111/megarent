@@ -35,9 +35,22 @@ const toggleFAQ = () => {
     }
   });
 };
+const toggleMenu = () => {
+  const toggler = document.querySelector(".page-header__toggler");
+  const pagination = document.querySelector(".navigation");
+  const close = pagination.querySelector(".navigation__close");
+
+  toggler.addEventListener("click", () => {
+    pagination.classList.add("navigation--shown");
+  });
+  close.addEventListener("click", () => {
+    pagination.classList.remove("navigation--shown");
+  });
+};
 
 document.addEventListener("DOMContentLoaded", (e) => {
   setCategoriesToggler();
   initSwiper();
   toggleFAQ();
+  toggleMenu();
 });

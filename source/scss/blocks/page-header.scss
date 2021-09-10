@@ -16,8 +16,11 @@
   &__logo {
     margin-right: 55px;
   }
-}
 
+  &__toggler {
+    display: none;
+  }
+}
 
 @media (max-width: 1200px) {
   .page-header {
@@ -33,6 +36,12 @@
     &__wrapper {
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+    &__toggler {
+      display: block;
+    }
+    &__logo {
+      margin: 0 auto;
     }
   }
 }
