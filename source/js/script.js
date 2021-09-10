@@ -28,6 +28,11 @@ const toggleFAQ = () => {
   const container = document.querySelector(".faq__container");
   toggler.addEventListener("click", () => {
     container.classList.toggle("faq__container--shown");
+    if (container.classList.contains("faq__container--shown")) {
+      toggler.textContent = "Скрыть";
+    } else {
+      toggler.textContent = "Показать все";
+    }
   });
 };
 
