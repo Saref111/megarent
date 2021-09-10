@@ -23,8 +23,16 @@ const initSwiper = () => {
     slideToClickedSlide: true,
   });
 };
+const toggleFAQ = () => {
+  const toggler = document.querySelector(".faq__button");
+  const container = document.querySelector(".faq__container");
+  toggler.addEventListener("click", () => {
+    container.classList.toggle("faq__container--shown");
+  });
+};
 
 document.addEventListener("DOMContentLoaded", (e) => {
   setCategoriesToggler();
   initSwiper();
+  toggleFAQ();
 });
