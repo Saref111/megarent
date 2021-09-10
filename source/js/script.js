@@ -47,10 +47,22 @@ const toggleMenu = () => {
     pagination.classList.remove("navigation--shown");
   });
 };
+const toggleMobileSubmenu = () => {
+  const links = document.querySelectorAll(".navigation__item--sublist");
+  console.log(links);
+  links.forEach((it) => {
+    it.querySelector("a").addEventListener("click", (e) => {
+      e.preventDefault();
+
+      it.classList.toggle("navigation__item--sublist-open");
+    });
+  });
+};
 
 document.addEventListener("DOMContentLoaded", (e) => {
   setCategoriesToggler();
   initSwiper();
   toggleFAQ();
   toggleMenu();
+  toggleMobileSubmenu();
 });
